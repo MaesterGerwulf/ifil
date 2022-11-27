@@ -1,6 +1,5 @@
 let isVertical = true;
-let lazyLoaded = false;
-  
+
 if ((window.scrollY >= 815 && document.documentElement.clientWidth < 1800))
   navHorizontal();
 
@@ -30,11 +29,6 @@ window.addEventListener("resize", () =>
 
 window.addEventListener("scroll", (evt) =>
 {
-  if (lazyLoaded == false)
-  {
-    changeCamp(0);
-    lazyLoaded = true
-  }
 
   if (isVertical)
   {

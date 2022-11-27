@@ -2,13 +2,6 @@ let campSelectors = document.getElementsByClassName("camp_selector");
 let locationTexts = document.getElementsByClassName("camp_slctr_loc_txt");
 let photoSelectors = document.getElementsByClassName("photo_selector");
 
-
-if (window.scrollY >= 815)
-{
-  
-  lazyLoaded = true
-}
-
 function changeCamp(title)
 {
     campSelectors[campIndex % 7].style.fontWeight = "300";
