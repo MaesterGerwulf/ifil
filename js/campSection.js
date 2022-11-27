@@ -135,10 +135,10 @@ function changeCampSection()
         let img3 = new Image();
         img3.src = "images/liberty_weekends/" + camp.locationEN.toLowerCase() + "/" + i + "sm.jpg";
       }
-      campSelectors[i].style.visibility = "visible";
+      campSelectors[i].style.display = "inline-block";
     }
     else
-      campSelectors[i].style.visibility = "hidden";
+      campSelectors[i].style.display = "none";
   }
 
   if (Math.floor(campIndex / 7) !== campSection)
@@ -162,9 +162,9 @@ function changeCampSection()
     camps_arrow_left.style.visibility = "visible";
 
   if ((camps.length - (campSection * 7)) > 7)
-    camps_arrow_right.style.visibility = "visible";
+    camps_arrow_right.style.display = "inline-block";
   else
-    camps_arrow_right.style.visibility = "hidden";
+    camps_arrow_right.style.display = "none";
 }
 
 function changePhotoSection() 
