@@ -169,7 +169,6 @@ function changeCampSection()
 
 function changePhotoSection() 
 {
-  let photoSelectors = document.getElementsByClassName("photo_selector");
   // amount of selectors that should be shown
   let length = 7;
   let photosRemaining;
