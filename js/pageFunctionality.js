@@ -24,7 +24,6 @@ xhttp.onload = function()
   // create page selectors
   for (let i = 1; i <= numOfPages; i++)
   {
-    console.log(i);
     let pageNum = document.createElement("a");
     
     if (i > 1)
@@ -47,7 +46,6 @@ xhttp.onload = function()
   // create images
   for (let i = 1; i <= numOfImages; i++)
   {
-    console.log(i);
     let img = document.createElement("img")
     img.loading = "lazy";
     img.src = result[(currentPage - 1) * 24 + i - 1];

@@ -8,4 +8,8 @@ function lazyPreload()
   let img6 = new Image("images/Members/Etuna.png");
   let img7 = new Image("images/Members/Giorgi.png");
   let img8 = new Image("images/Members/Barbara.png");
+
+  changeCampSection();
+
+  changeCamp(0);
 }

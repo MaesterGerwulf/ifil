@@ -2,17 +2,15 @@ let campSelectors = document.getElementsByClassName("camp_selector");
 let locationTexts = document.getElementsByClassName("camp_slctr_loc_txt");
 let photoSelectors = document.getElementsByClassName("photo_selector");
 
-changeCampSection();
 
 if (window.scrollY >= 815)
 {
-  changeCamp(0);
+  
   lazyLoaded = true
 }
 
 function changeCamp(title)
 {
-    console.log("here");
     campSelectors[campIndex % 7].style.fontWeight = "300";
     campSelectors[campIndex % 7].style.backgroundColor = "transparent";
     locationTexts[campIndex % 7].style.fontWeight = "500";
@@ -30,7 +28,7 @@ function changeCamp(title)
     changePhoto(0);
     changePhotoSection();
 
-    camp_picture.src = getImgSource("Picture", "jpg");
+    camp_picture.src = getImgSource("picture", "jpg");
 
 
     let camp_date = document.getElementById("camp_date");
@@ -72,7 +70,7 @@ function changePhoto(title)
         photo_arrow_left.style.display = "none";
         photo_arrow_right.style.display = "block";
 
-        camp_photo.src = getImgSource("Speakers", "jpg");
+        camp_photo.src = getImgSource("speakers", "jpg");
         camp_photo.style.margin = "0";
     }
 
@@ -106,7 +104,7 @@ function changePhoto(title)
     }
     else 
     {
-        camp_photo.src = getImgSource(photoIndex - 1, "webp");
+        camp_photo.src = getImgSource(("photo_" + (photoIndex - 1)), "webp");
 
         if ((photoIndex - 1) == camp().numOfPhotos)
             photo_arrow_right.style.display = "none";
@@ -136,13 +134,13 @@ function changeCampSection()
       
       let img1 = new Image();
       let img2 = new Image();
-      img1.src = "images/" + camp.locationEN + "/Picture.jpg";
-      img2.src = "images/" + camp.locationEN + "/Speakers.jpg";
+      img1.src = "images/liberty_weekends/" + camp.locationEN + "/picture.jpg";
+      img2.src = "images/liberty_weekends/" + camp.locationEN + "/speakers.jpg";
       
       for (let i = 1; i <= camp.numOfPhotos; i++)
       {
         let img3 = new Image();
-        img3.src = "images/" + camp.locationEN + "/" + i + "sm.jpg";
+        img3.src = "images/liberty_weekends/" + camp.locationEN + "/" + i + "sm.jpg";
       }
       campSelectors[i].style.visibility = "visible";
     }
@@ -220,7 +218,7 @@ function changePhotoSection()
       photoSelectors[i].style.visibility = "visible";
       // camp photos preload
       img = new Image();
-      img.src = getImgSource((i - 1), "webp");
+      img.src = getImgSource(("photo_" + (i - 1)), "webp");
       photoSelectors[i].style.backgroundImage = "url('" + getImgSource((i - 1) + "sm", "jpg") + "')";
     }
   }

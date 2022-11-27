@@ -67,17 +67,17 @@ photos_arrow_right.addEventListener("click", (evt) =>
 
 if (!hasTouch())
 {
-  camps_arrow_left.addEventListener("mouseover", () => {if (!hasTouch()) fillWhite("camp_arrow_left")})
-  camps_arrow_left.addEventListener("mouseout", () => {if (!hasTouch()) fillOrange("camp_arrow_left")})
+  camps_arrow_left.addEventListener("mouseover", () => fillWhite("camp_arrow_left"))
+  camps_arrow_left.addEventListener("mouseout", () => fillOrange("camp_arrow_left"))
 
-  camps_arrow_right.addEventListener("mouseover", () => {if (!hasTouch()) fillWhite("camp_arrow_right")})
-  camps_arrow_right.addEventListener("mouseout", () => {if (!hasTouch()) fillOrange("camp_arrow_right")})
+  camps_arrow_right.addEventListener("mouseover", () => fillWhite("camp_arrow_right"))
+  camps_arrow_right.addEventListener("mouseout", () => fillOrange("camp_arrow_right"))
 
-  photo_arrow_left.addEventListener("mouseover", () => {if (!hasTouch()) fillOrange("photo_arrow_left")})
-  photo_arrow_left.addEventListener("mouseout", () => {if (!hasTouch()) fillWhite("photo_arrow_left")})
+  photo_arrow_left.addEventListener("mouseover", () => fillOrange("photo_arrow_left"))
+  photo_arrow_left.addEventListener("mouseout", () => fillWhite("photo_arrow_left"))
 
-  photo_arrow_right.addEventListener("mouseover", () => {if (!hasTouch()) fillOrange("photo_arrow_right")})
-  photo_arrow_right.addEventListener("mouseout", () => {if (!hasTouch()) fillWhite("photo_arrow_right")})
+  photo_arrow_right.addEventListener("mouseover", () => fillOrange("photo_arrow_right"))
+  photo_arrow_right.addEventListener("mouseout", () => fillWhite("photo_arrow_right"))
 
   photos_arrow_left.addEventListener("mouseover", () => fillOrange("photos_arrow_left"))
   photos_arrow_left.addEventListener("mouseout", () => fillWhite("photos_arrow_left"))
