@@ -11,8 +11,8 @@ function toImgURL(str) {
   }
 
   function getImgSource(name, imgExtension){
-    console.log(camp().locationEN.toLowerCase());
-    return "images/liberty_weekends/" + camp().locationEN.toLowerCase() + "/" + name + "." + imgExtension;
+    let campLoc = camp().locationEN.toLowerCase();
+    return "images/liberty_weekends/" + campLoc + "/" + name + "." + imgExtension;
   }
 
   function fillWhite(id) {
