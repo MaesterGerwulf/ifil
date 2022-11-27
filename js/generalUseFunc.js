@@ -11,6 +11,7 @@ function toImgURL(str) {
   }
 
   function getImgSource(name, imgExtension){
+    console.log("images/liberty_weekends/" + camp().locationEN.toLowerCase() + "/" + name + "." + imgExtension);
     return "images/liberty_weekends/" + camp().locationEN.toLowerCase() + "/" + name + "." + imgExtension;
   }
 

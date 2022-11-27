@@ -33,7 +33,7 @@ function changeCamp(title)
 
     let camp_date = document.getElementById("camp_date");
 
-    camp_location.firstChild.nodeValue = camp().locationEN + "\xa0\xa0";
+    camp_location.firstChild.nodeValue = camp() + "\xa0\xa0";
     camp_date.textContent = camp().dateEN;
     camp_text.innerHTML = camp().textEN;
 
@@ -134,13 +134,13 @@ function changeCampSection()
       
       let img1 = new Image();
       let img2 = new Image();
-      img1.src = "images/liberty_weekends/" + camp.locationEN + "/picture.jpg";
-      img2.src = "images/liberty_weekends/" + camp.locationEN + "/speakers.jpg";
+      img1.src = "images/liberty_weekends/" + camp.locationEN.toLowerCase() + "/picture.jpg";
+      img2.src = "images/liberty_weekends/" + camp.locationEN.toLowerCase() + "/speakers.jpg";
       
       for (let i = 1; i <= camp.numOfPhotos; i++)
       {
         let img3 = new Image();
-        img3.src = "images/liberty_weekends/" + camp.locationEN + "/" + i + "sm.jpg";
+        img3.src = "images/liberty_weekends/" + camp.locationEN.toLowerCase() + "/" + i + "sm.jpg";
       }
       campSelectors[i].style.visibility = "visible";
     }
