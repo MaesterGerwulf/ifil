@@ -1,0 +1,69 @@
+// // language changer
+
+    // if (window.location.hash !== "#ge")
+    // {
+    //   let camp = camps[0];
+    //   camp_location.innerHTML = camp.locationEN;
+    //   camp_date.innerHTML = camp.dateEN;
+    //   camp_text.innerHTML = camp.textEN;
+    //   camp_photo.src = toImgURL(camp.speakersEN)
+    // }
+    // else
+    // {
+    //   let head  = document.getElementsByTagName('head')[0];
+    //   let link = document.createElement("link");
+    //   link.rel = "stylesheet";
+
+    //   styles_eng.remove();
+    //   link.href = "styles geo.css";
+    //   head.appendChild(link);
+      
+    //   let camp = camps[0];
+    //   let mapTexts = document.getElementsByClassName("map_text");
+    //   let campLocTexts = document.getElementsByClassName("camp_loc_text");
+    //   let memberNames = document.getElementsByClassName("member_name");
+    //   let memberTitles = document.getElementsByClassName("member_title");
+    //   let memberSubTitles = document.getElementsByClassName("member_sub_title");
+
+    //   let memberNamesGE = ["მირიან ბეჟიტაშვილი", "ანა ჩიქოვანი", "თინათინ ბოლოკაძე", "ეთუნა ხაბურძანია,",
+    //                        "როკო მწყერაშვილი", "გიორგი მოსიაშვილი", "რევაზ ბუზიაშვილი"];
+    //   let memberTitlesGE = [];
+    //   let memberSubTitlesGE = [];
+
+    //   org_name.innerHTML = "";
+    //   text1.innerHTML = "";
+    //   text2.innerHTML = "";
+    //   text3.innerHTML = "";
+    //   text4.innerHTML = "";
+    //   text5.innerHTML = "";
+
+    //   for (let i = 0; i < mapTexts.length; i++) {
+    //     mapTexts[i].innerHTML = camps[mapTexts[i].name].locationGeo;
+    //   }
+
+    //   for (let i = 0; i < campLocTexts.length; i++) {
+    //     campLocTexts[i].innerHTML = camps[campLocTexts[i].name].locationGeo;
+    //   }
+
+    //   camp_location.innerHTML = camp.locationGE;
+    //   camp_date.innerHTML = camp.dateGE;
+    //   camp_text.innerHTML = camp.textGE;
+    //   camp_photo.src = toImgURL(camp.speakersGE)
+
+    //   who_we_are_txt.innerHTML = "";
+    //   contact_us_txt.innerHTML = "";
+
+    //   // newsletter texts
+
+    //   for (let i = 0; i < memberNames.length; i++) {
+    //     memberNames[i].innerHTML = memberNamesGE[i];
+    //   }
+
+    //   for (let i = 0; i < memberTitles.length; i++) {
+    //     memberTitles[i].innerHTML = memberTitlesGE[i];
+    //   }
+
+    //   for (let i = 0; i < memberSubTitles.length; i++) {
+    //     memberSubTitles[i].innerHTML = memberSubTitlesGE[i];
+    //   }
+    // }
