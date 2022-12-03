@@ -18,41 +18,11 @@ function getNumOfImagesOnPage(currentPage, numOfPages, numOfImages, imgsPerPage)
     return imgsPerPage;
 }
 
-
-function verifyNumOfImages(numOfImages)
-{
-  let keepGoing = false;
-  let n = numOfImages;
-
-  while (keepGoing == false)
-  {
-    n++
-
-    try
-    {
-      var xhr = new XMLHttpRequest();
-      
-      xhr.open('HEAD', "images/quotes/" + n + ".jpg", false);
-      
-      xhr.send();
-    }
-    catch {
-      keepGoing = true;
-    }
-  }
-
-  return (n - 1);
-}
-
 const xhttp = new XMLHttpRequest();
 
 xhttp.onload = function()
 {
-  var startTime = performance.now()
   let numOfImages = parseInt(this.responseText);
-  numOfImages = verifyNumOfImages(numOfImages);
-  var endTime = performance.now()
-  console.log(endTime - startTime);
   const pageNavDiv = document.getElementById("page_nav_div1");
   const nextArrow = document.querySelector(".next_div");
   const quotesDiv = document.getElementById("quotes_div")
