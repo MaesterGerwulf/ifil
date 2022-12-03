@@ -1,24 +1,65 @@
-const xhttp = new XMLHttpRequest();
 
 addEventListener("hashchange", (evt) => {window.location.reload(true);})
 
+
+function getCurrentPage()
+{
+  if (location.hash)
+    return parseInt(location.hash.slice(1));
+  else
+    return 1;
+}
+
+function getNumOfImagesOnPage(currentPage, numOfPages, numOfImages, imgsPerPage)
+{
+  if (currentPage == numOfPages)
+    return (numOfImages - imgsPerPage * (currentPage - 1));
+  else
+    return imgsPerPage;
+}
+
+
+function verifyNumOfImages(numOfImages)
+{
+  let keepGoing = false;
+  let n = numOfImages;
+
+  while (keepGoing == false)
+  {
+    n++
+
+    try
+    {
+      var xhr = new XMLHttpRequest();
+      
+      xhr.open('HEAD', "images/quotes/" + n + ".jpg", false);
+      
+      xhr.send();
+    }
+    catch {
+      keepGoing = true;
+    }
+  }
+
+  return (n - 1);
+}
+
+const xhttp = new XMLHttpRequest();
+
 xhttp.onload = function()
 {
-  const result = this.responseText.split(/\r?\n/);
-  const numOfPages = Math.ceil(result.length / 24)
+  var startTime = performance.now()
+  let numOfImages = parseInt(this.responseText);
+  numOfImages = verifyNumOfImages(numOfImages);
+  var endTime = performance.now()
+  console.log(endTime - startTime);
   const pageNavDiv = document.getElementById("page_nav_div1");
   const nextArrow = document.querySelector(".next_div");
   const quotesDiv = document.getElementById("quotes_div")
-  let numOfImages = 24;
-  let currentPage;
-
-  if (location.hash)
-    currentPage = parseInt(location.hash.slice(1));
-  else
-    currentPage = 1;
-
-  if (currentPage == numOfPages)
-    numOfImages = result.length - 24 * (currentPage - 1);
+  const imgsPerPage = 12;
+  const numOfPages = Math.ceil(numOfImages / imgsPerPage)
+  let currentPage = getCurrentPage();
+  let numOfImagesOnPage = getNumOfImagesOnPage(currentPage, numOfPages, numOfImages, imgsPerPage);
 
 
   // create page selectors
@@ -44,48 +85,44 @@ xhttp.onload = function()
   }
 
   // create images
-  for (let i = 1; i <= numOfImages; i++)
+  for (let i = 0; i < numOfImagesOnPage; i++)
   {
     let img = document.createElement("img")
+    let imgNum = (numOfImages - i - numOfImagesOnPage * (currentPage - 1));
     img.loading = "lazy";
-    img.src = result[(currentPage - 1) * 24 + i - 1];
+    img.alt = "Liberty Quote";
+    img.src = "images/quotes/" + imgNum + ".jpg";
+
     img.classList.add("quote_img", "col-xxl-3", "col-lg-4", "col-sm-6")
 
     quotesDiv.appendChild(img);
   }
 
-
-  let e = document.querySelector(".next_div")
-  let r = document.querySelector(".prev_div")
+  let nextDiv = document.querySelector(".next_div")
+  let prevDiv = document.querySelector(".prev_div")
   
   if (currentPage == 1)
   {
-    let q = document.querySelector(".prev_txt");
-    let w = document.querySelector(".prev_arrow_path");
-    q.style.color = "#888888";
-    w.style.fill = "#888888";
+    document.querySelector(".prev_txt").style.color = "#888888";
+    document.querySelector(".prev_arrow_path").style.fill = "#888888";
   }
   else if (currentPage == 2)
-    r.href = "";
+    prevDiv.href = "";
   else
-    r.href = "#" + (currentPage - 1)
+    prevDiv.href = "#" + (currentPage - 1)
   
   if (currentPage == numOfPages)
   {
-    let z = document.querySelector(".next_txt")
-    let x = document.querySelector(".next_arrow_path")
-    z.style.color = "#888888";
-    x.style.fill = "#888888";
+    document.querySelector(".next_txt").style.color = "#888888";
+    document.querySelector(".next_arrow_path").style.fill = "#888888";
   }
   else
-    e.href = "#" + (currentPage + 1);
+    nextDiv.href = "#" + (currentPage + 1);
 
   // clone 
   var clone = pageNavDiv.cloneNode(true);
   clone.id = "page_nav_div2";
   quotesDiv.appendChild(clone);
-
-  
 }
-xhttp.open("GET", "quote_links.txt");
+xhttp.open("GET", "images/quotes/0.txt");
 xhttp.send();
