@@ -58,7 +58,7 @@ xhttp.onload = function()
   for (let i = 0; i < numOfImagesOnPage; i++)
   {
     let img = document.createElement("img")
-    let imgNum = (numOfImages - i - numOfImagesOnPage * (currentPage - 1));
+    let imgNum = (numOfImages - i - imgsPerPage * (currentPage - 1));
     img.loading = "lazy";
     img.alt = "Liberty Quote";
     img.src = "images/quotes/" + imgNum + ".jpg";
