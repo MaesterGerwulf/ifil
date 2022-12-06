@@ -13,34 +13,36 @@ body {
 
 @font-face {
   font-family: NerisLightItalic;
-  src: url("fonts/neris_lightitalic/Neris-LightItalic-webfont.woff");
+  src: url("fonts/Neris_LightItalic.woff2");
+  /* src: url("fonts/neris_lightitalic/Neris-LightItalic-webfont.woff"); */
   font-display: swap;
 }
 @font-face {
   font-family: NerisSemiBoldItalic;
-  src: url("fonts/neris_semibolditalic/Neris-SemiBoldItalic-webfont.woff");
+  src: url("fonts/Neris_SemiBoldItalic.woff2");
+  /* src: url("fonts/neris_semibolditalic/Neris-SemiBoldItalic-webfont.woff"); */
   font-display: swap;
 }
 @font-face {
   font-family: NerisLight;
-  src: url("fonts/neris_light/Neris-Light-webfont.woff");
+  src: url("fonts/Neris_Light.woff2");
   font-display: swap;
 }
 @font-face {
   font-family: NerisThin;
-  src: url("fonts/neris_thin/Neris-Thin-webfont.woff");
+  src: url("fonts/Neris_Thin.woff2");
   font-display: swap;
 }
 
 @font-face {
   font-family: NerisSemiBold;
-  src: url("fonts/neris_semibold/Neris-SemiBold-webfont.woff");
+  src: url("fonts/Neris_SemiBold.woff2");
   font-display: swap;
 }
 
 @font-face {
   font-family: NerisBoldItalic;
-  src: url("fonts/neris_bolditalic/Neris-BoldItalic-webfont.woff");
+  src: url("fonts/Neris_BoldItalic.woff2");
   font-display: swap;
 }
 
