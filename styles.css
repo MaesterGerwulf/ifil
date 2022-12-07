@@ -641,7 +641,6 @@ button {
    
    #map {
     position: relative;
-    content: url("images/Map\ Georgia\ Green.png");
     height: 460px;
     width: 901px;
    }
