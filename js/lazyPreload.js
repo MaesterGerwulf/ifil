@@ -9,6 +9,11 @@ function lazyPreload()
                           "images/Members/Giorgi.png",
                           "images/Members/Barbara.png"]
   
+  // its close enough that even with lazy load it loads
+  map.src = "images/Map Georgia Green.png";
+  // preload background
+  section_3.style.backgroundImage = "url('images/Statue.webp')"
+
   imagesToPreload.forEach(imgSrc =>
   {
     let img = new Image();
