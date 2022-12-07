@@ -218,7 +218,8 @@ button {
 
 #section_1 {
   background-size: 1920px;
-  background-image: url("https://i.ibb.co/fkYFWSs/Hero-Back.webp");
+  /* background-image: url("https://i.ibb.co/fkYFWSs/Hero-Back.webp"); */
+  background-image: url("images/Hero\ Back.webp");
   background-position-x: 45%;
 }
 
@@ -647,8 +648,8 @@ button {
 
    #map_pointing_hand {
     position:absolute;
-    top:200px;
-    left:76px;
+    top: 200px;
+    left: 76px;
     width: 59.742px;
     height: 46.143px;
    }
